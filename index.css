@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.margin {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.slidefillcontainer {
+    height: 10px;
+    background-color: grey;
+    margin-inline: auto;
+    border-radius: 5px;
+
+}
+
+.margin-inline {
+    margin-inline: auto;
+}
+
+.fill {
+    height: 10px;
+    width: 10%;
+    background-color: blue;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+}
+
+.box {
+    height: fit-content;
+    margin-top: 30px;
+}
+
+.list {
+    border: 1px solid rgb(243, 239, 239);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.analysis-section {
+    display: flex;
+}
