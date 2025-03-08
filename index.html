@@ -7,21 +7,28 @@
     <title>SoulMirror</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
 </head>
 
+
 <body class="bg-gray-100">
-    <header class="flex justify-between mt-8 margin">
-        <section>
+    <header class="flex justify-between mt-4 margin mb-6">
+        <section class="SoulMirror">
             <p>SoulMirror</p>
         </section>
-        <section class="flex justify-end gap-4">
+        <section class="flex justify-end gap-4 ">
             <nav>1</nav>
             <nav>2</nav>
         </section>
     </header class="bg-white">
     <div class="relative flex-col mt-2 margin">
-        <section class="slidefillcontainer w-[100%]"></section>
-        <section class="fill absolute top-1"></section>
+        <section class="slidefillcontainer bg-gray-300 w-[100%]"></section>
+        <section class="fill bg-purple-700 absolute top-1"></section>
         <label class="text-sm/4" for="slidefillcontainer">Question <span id="attemptedQuestions">5</span> of 10</label>
     </div>
     <main class="bg-gray-100">
@@ -50,47 +57,47 @@
         </section>
 
         <<section id="back-for" class="w-[70%] margin-inline flex justify-between">
-            <button id="Previous" class="text-purple-500"><--Previous </button>
+            <button id="Previous" class="text-purple-700"><--Previous </button>
 
-       
-                    <button id="next" class="bg-purple-500 text-white rounded-md pl-2 pr-2 ">Next--></button>
-        </section>
+
+                    <button id="next" class="bg-purple-700 text-white rounded-md pl-2 pr-2 ">Next--></button>
+                    </section>
 
 
                     <section class="box w-[70%] mb-10 ml-4 mr-4 margin-inline  shadow-xl flex-col">
                         <h2 class="pl-2"><b>Current Trait Analysis</b></h2>
-                        
+
                         <div class="flex-col pt-4">
                             <section class="flex gap-4 pb-4 ">
                                 <div class="text-xs pl-2"><b>Extroversion</b> </div>
-                                <div class="analysis-container">
-                                    <div class="analysis "></div>
+                                <div class="analysis-container bg-gray-300">
+                                    <div class="analysis bg-purple-700"></div>
                                 </div>
-                                
-                                <div id="%1"class="text-xs pr-2">10%</div>
+
+                                <div id="%1" class="text-xs pr-2">10%</div>
                             </section>
 
                             <section class="flex gap-4 pb-4 ">
                                 <div class="text-xs pl-2"><b>Extroversion</b> </div>
-                                <div class="analysis-container">
-                                    <div class="analysis "></div>
+                                <div class="analysis-container bg-gray-300">
+                                    <div class="analysis bg-purple-700 "></div>
                                 </div>
-                                
-                                <div id="%1"class="text-xs pr-2">10%</div>
+
+                                <div id="%1" class="text-xs pr-2">10%</div>
                             </section>
 
                             <section class="flex gap-4 pb-4 ">
                                 <div class="text-xs pl-2"><b>Extroversion</b> </div>
-                                <div class="analysis-container">
-                                    <div class="analysis "></div>
+                                <div class="analysis-container bg-gray-300">
+                                    <div class="analysis bg-purple-700"></div>
                                 </div>
-                                
-                                <div id="%1"class="text-xs pr-2">10%</div>
+
+                                <div id="%1" class="text-xs pr-2">10%</div>
                             </section>
-    
+
                         </div>
                     </section>
-                    
+
     </main>
     <footer class="w[100%]  flex justify-between pb-20 bg-white">
         <div class="pl-6 pt-4">all rights are reserved</div>
