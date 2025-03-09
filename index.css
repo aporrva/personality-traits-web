@@ -1,12 +1,13 @@
 * {
     box-sizing: border-box;
     font-family:  "Poppins", sans-serif;
+    width: 1005;
 }
 
 
-.margin {
-    margin-left: 5%;
-    margin-right: 5%;
+.padding {
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 .slidefillcontainer {
@@ -28,18 +29,28 @@
     top: 0;
 }
 
-.box {
+.boxx {
     height: fit-content;
     margin-top: 30px;
+    padding-bottom: 5px;
 }
-
+#Question{
+    padding: 16px 24px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+}
+#image{
+    padding: 16px 24px;
+}
 .list {
     border: 1px solid rgb(213, 206, 206);
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 4px 0 4px 4px;
+    border-radius: 10px;
+    margin: 16px 24px;
+    padding: 8px 0 8px 8px;
     box-shadow: 0 0 5px rgb(213, 206, 206);
+    height: 58px ;
+    align-content: center; 
 }
 
 
@@ -48,19 +59,33 @@
 }
 .analysis-container{
     width: 100%;
-    height: 6px;
+    height: 8px;
     border-radius: 5px;
     align-self:last baseline;
 }
 .analysis{
-    height: 6px;
+    height: 8px;
     border-radius: 5px;
     margin-block: auto;
     width: 10%;
 }
-.SoulMirror{
-    color: blueviolet;
-    border: 1px solid blueviolet;
-    padding: 4px;
-    font-weight: 600;
+@media screen and (max-width:750px){
+    #back-for, .box {
+        width: 70%;
+    }
+}
+@media screen and (max-width:530px){
+    #back-for, .box{
+        width: 85%;
+
+    }
+    .gap{
+        gap: 10px;
+    }
+    .foot{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px
+    }
+
 }
