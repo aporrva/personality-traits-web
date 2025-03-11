@@ -117,6 +117,7 @@ let Question = document.getElementById("Question")
 let story = document.getElementById("story")
 let optionsContainer = document.querySelector("#options-container")
 let optionlist = document.querySelectorAll(".list")
+let radiolist = document.querySelectorAll(".radio-item")
 let attemptedQuestions = document.getElementById("numberofquestions")
 let attemptedQuestionsBar = document.querySelector("#attemptedQuestionsBar")
 let analysis = document.querySelector(".analysis")
@@ -125,20 +126,57 @@ let previousButton = document.getElementById("Previous")
 let percentageofaQuality = document.getElementById("%1") 
 let questionNumber = 0
 let optionNumber = 0
+let introdiv = document.getElementById("introdiv")
+let extrodiv = document.getElementById("extrodiv")
+let per1 = document.getElementById("%1")
+let per2 = document.getElementById("%2")
 
-extroversion = 0
-introversion = 0
+let exsum = 0
+let insum = 0
+
+const scoreOFExtroversion = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+    7: 0,
+    8: 0,
+    9: 0,
+    10 : 0
+
+}
+
+const scoreOFIntroversion = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+    7: 0,
+    8: 0,
+    9: 0,
+    10 : 0
+
+}
+
 
 function radiobuttonclicked(){
-    optionlist.forEach((baby)=>{
-        baby.addEventListener("change",()=>{
+    radiolist.forEach((baby)=>{
+        baby.addEventListener("click",()=>{
+            let question = `${attemptedQuestions.textContent}`
+            scoreOFExtroversion[question] = 0
+            introversion = 0
+            extroversion = 0
             if (baby.checked){
                 questionlist[questionNumber+1].options.forEach((num)=>{
                     if(num.id === baby.value){
                         extroversion += num.score.extroversion
-                        console.log(extroversion)
                         introversion += num.score.introversion
-                        console.log(introversion)
+                        scoreOFIntroversion[question] = introversion
+                        add()
                     }
                 })
             }
@@ -181,4 +219,17 @@ function changeQuestionToPrevious() {
             optionlist[optionNumber].textContent = questionlist[questionNumber].options[optionNumber].text
         }
     }
+}
+function add (){
+    scoreOFExtroversion.forEach((each)=>{
+        exsum += each
+    })
+    scoreOFIntroversion.forEach((each)=>{
+        insum += each
+    })
+    extrodiv.style.width= `${exsum}%`
+    per1.textContent = `${exsum}%`
+    introdiv.style.width= `${insum}%`
+    per2.textContent = `${insum}%`
+
 }
