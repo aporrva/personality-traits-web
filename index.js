@@ -159,6 +159,28 @@ const scoreOFIntroversion = {
     10: 0
 
 }
+const clickedoptions={
+    1:0,
+    2:0,
+    3:0,
+    4:0,
+    5:0,
+    6:0,
+    7:0,
+    8:0,
+    9:0,
+    10:0
+}
+function alertt (){
+    counting = 0
+    clickedoptions.forEach((baby)=>{
+        if (clickedoptions.baby != 0)
+        {counting ++}
+    })
+    if(counting ===10){
+        alert("congrats")
+    }
+}
 
 
 function radiobuttonclicked() {
@@ -171,6 +193,8 @@ function radiobuttonclicked() {
             if (baby.checked) {
                 questionlist[questionNumber + 1].options.forEach((num) => {
                     if (num.id === baby.value) {
+                        clickedoptions[questionNumber+1]=num.id
+                        console.log(clickedoptions)
                         extroversion += num.score.extroversion
                         scoreOFExtroversion[question] = extroversion
                         introversion += num.score.introversion
@@ -197,9 +221,16 @@ function radioreset(){
         baby.checked = false
     })
 }
+function radiorecall(){
+    radiolist.forEach((baby) => {
+        if (baby.value === clickedoptions[attemptedQuestions.textContent]){
+            baby.checked = true
+            console.log(baby.value)
+        }
+    })
+}
 nextButton.addEventListener("click", changeQuestionToNext)
 function changeQuestionToNext() {
-    radioreset()
     optionNumber = 0
     if (questionNumber < 9) {
         questionNumber++
@@ -211,11 +242,18 @@ function changeQuestionToNext() {
             optionlist[optionNumber].textContent = questionlist[questionNumber].options[optionNumber].text
         }
     }
+    if (clickedoptions[attemptedQuestions.textContent] === 0){
+        radioreset()
+    }
+    else{
+        radiorecall()
+    }
+    alertt()
 }
+
 previousButton.addEventListener("click", changeQuestionToPrevious)
 function changeQuestionToPrevious() {
     optionNumber = 0
-    radioreset()
     if (questionNumber > 0) {
         questionNumber--
         attemptedQuestions.textContent = questionNumber + 1
@@ -226,7 +264,12 @@ function changeQuestionToPrevious() {
             optionlist[optionNumber].textContent = questionlist[questionNumber].options[optionNumber].text
         }
     }
+    if (clickedoptions[attemptedQuestions.textContent] !=0){
+        radiorecall()
+    }
+    alertt()
 }
+
 function add() {
     const scoreOFExtroversionArray = Object.entries(scoreOFExtroversion).flat()
     const scoreOFIntroversionArray = Object.entries(scoreOFIntroversion).flat()
