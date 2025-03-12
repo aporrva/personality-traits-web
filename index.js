@@ -2,6 +2,7 @@
 const questionlist = [
     {
         "id": 1,
+        "image":"https://w0.peakpx.com/wallpaper/733/114/HD-wallpaper-the-grim-adventures-of-billy-and-mandy-tv-series-2001-2007-backdrops.jpg",
         "story": "You arrive at a party where you don’t know many people. The room is filled with chatter, laughter, and lively conversations.",
         "question": "What do you do?",
         "options": [
@@ -13,6 +14,7 @@ const questionlist = [
     },
     {
         "id": 2,
+        "image":"https://akamaividz2.zee5.com/image/upload/w_1170,h_658,c_scale,f_auto,q_auto/resources/0-1-239853/list/01239853_list.jpg",
         "story": "You are given a tight deadline at work for an important project. Unexpected challenges arise.",
         "question": "How do you handle the situation?",
         "options": [
@@ -24,6 +26,7 @@ const questionlist = [
     },
     {
         "id": 3,
+        "image":"https://getwallpapers.com/wallpaper/full/f/7/f/927204-shin-chan-wallpapers-1920x1200-windows-10.jpg",
         "story": "You are traveling to a new country alone for the first time. You have some free time to explore.",
         "question": "What do you do?",
         "options": [
@@ -35,6 +38,7 @@ const questionlist = [
     },
     {
         "id": 4,
+        "image":"https://www.animationxpress.com/wp-content/uploads/2022/10/Miraculous-Tales-of-Ladybug-and-Cat-Noir-Season-5.jpg",
         "story": "You have a weekend to relax with no obligations or plans.",
         "question": "How do you spend your time?",
         "options": [
@@ -46,6 +50,7 @@ const questionlist = [
     },
     {
         "id": 5,
+        "image":"https://tse3.mm.bing.net/th?id=OIP.FSlTbDu0_qgs4GIJcREzjwHaEK&pid=Api&P=0&h=180https://tse4.mm.bing.net/th?id=OIP.wHWYezozkJcqU22sq3K_UwHaEK&pid=Api&P=0&h=180",
         "story": "A friend asks you to help them move apartments on short notice.",
         "question": "How do you respond?",
         "options": [
@@ -57,6 +62,7 @@ const questionlist = [
     },
     {
         "id": 6,
+        "image":"https://www.chhotabheem.com/image/catalog/wallpaper/1920x1200/series_03.jpg",
         "story": "You are in a group discussion, and a topic you’re passionate about comes up.",
         "question": "How do you contribute?",
         "options": [
@@ -68,6 +74,7 @@ const questionlist = [
     },
     {
         "id": 7,
+        "image":"https://tse1.mm.bing.net/th?id=OIP.3R5Hwgj_pxbxvGa1z65tEgHaEK&pid=Api&P=0&h=180g",
         "story": "You are at a networking event where you have the chance to meet influential people in your industry.",
         "question": "What is your approach?",
         "options": [
@@ -79,6 +86,7 @@ const questionlist = [
     },
     {
         "id": 8,
+        "image":"https://wallpapers.com/images/hd/oggy-and-the-cockroaches-suspicious-smile-ykp282hxp5r6m8gp.jpg",
         "story": "You are working on a group project, and your team is struggling to make progress.",
         "question": "How do you handle it?",
         "options": [
@@ -90,6 +98,7 @@ const questionlist = [
     },
     {
         "id": 9,
+        "image":"https://wallpapercave.com/wp/wp6684369.png",
         "story": "You receive an unexpected invitation to an event where you won’t know anyone.",
         "question": "What do you do?",
         "options": [
@@ -101,6 +110,7 @@ const questionlist = [
     },
     {
         "id": 10,
+        "image":"https://tse2.mm.bing.net/th?id=OIP.82hIEaurZObeZJbQhPqjsgHaEC&pid=Api&P=0&h=180",
         "story": "You have a chance to present your ideas in front of a large audience.",
         "question": "How do you feel about it?",
         "options": [
@@ -114,6 +124,7 @@ const questionlist = [
 ]
 
 let Question = document.getElementById("Question")
+let image = document.getElementById("image")
 let story = document.getElementById("story")
 let optionsContainer = document.querySelector("#options-container")
 let optionlist = document.querySelectorAll(".list")
@@ -173,11 +184,12 @@ const clickedoptions={
 }
 function alertt (){
     counting = 0
-    clickedoptions.forEach((baby)=>{
+    clickedoptionsnewarray = Object.entries(clickedoptions)
+    clickedoptionsnewarray.forEach((baby)=>{
         if (clickedoptions.baby != 0)
         {counting ++}
     })
-    if(counting ===10){
+    if(counting ===19){
         alert("congrats")
     }
 }
@@ -191,10 +203,9 @@ function radiobuttonclicked() {
             introversion = 0
             extroversion = 0
             if (baby.checked) {
-                questionlist[questionNumber + 1].options.forEach((num) => {
+                questionlist[questionNumber].options.forEach((num) => {
                     if (num.id === baby.value) {
                         clickedoptions[questionNumber+1]=num.id
-                        console.log(clickedoptions)
                         extroversion += num.score.extroversion
                         scoreOFExtroversion[question] = extroversion
                         introversion += num.score.introversion
@@ -205,6 +216,7 @@ function radiobuttonclicked() {
             }
         })
     })
+    alertt()
 }
 radiobuttonclicked()
 
@@ -212,6 +224,7 @@ attemptedQuestions.textContent = questionNumber + 1
 story.textContent = questionlist[questionNumber].story
 Question.textContent = questionlist[questionNumber].question
 attemptedQuestionsBar.style.width = (questionNumber + 1) * 10 + "%"
+image.src = questionlist[((attemptedQuestions).textContent)-1].image
 for (optionNumber; optionNumber < 4; optionNumber++) {
     optionlist[optionNumber].textContent = questionlist[questionNumber].options[optionNumber].text
 }
@@ -238,6 +251,7 @@ function changeQuestionToNext() {
         attemptedQuestionsBar.style.width = (questionNumber + 1) * 10 + "%"
         story.textContent = questionlist[questionNumber].story
         Question.textContent = questionlist[questionNumber].question
+        image.src = questionlist[((attemptedQuestions).textContent)-1].image
         for (optionNumber; optionNumber < 4; optionNumber++) {
             optionlist[optionNumber].textContent = questionlist[questionNumber].options[optionNumber].text
         }
@@ -248,7 +262,6 @@ function changeQuestionToNext() {
     else{
         radiorecall()
     }
-    alertt()
 }
 
 previousButton.addEventListener("click", changeQuestionToPrevious)
@@ -260,6 +273,7 @@ function changeQuestionToPrevious() {
         attemptedQuestionsBar.style.width = (questionNumber + 1) * 10 + "%"
         story.textContent = questionlist[questionNumber].story
         Question.textContent = questionlist[questionNumber].question
+        image.src = questionlist[((attemptedQuestions).textContent)-1].image
         for (optionNumber; optionNumber < 4; optionNumber++) {
             optionlist[optionNumber].textContent = questionlist[questionNumber].options[optionNumber].text
         }
@@ -267,7 +281,6 @@ function changeQuestionToPrevious() {
     if (clickedoptions[attemptedQuestions.textContent] !=0){
         radiorecall()
     }
-    alertt()
 }
 
 function add() {
