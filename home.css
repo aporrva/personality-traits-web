@@ -1,0 +1,21 @@
+body{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+.blue-bg{
+    background-color: #4F46E5;
+}
+.blue-fg{
+    color: #4F46E5;
+}
+.zinc-bg{
+    background-color: #4B5563;
+}
+.zinc-fg{
+    color: #4B5563;
+}
+.m-inline-auto{
+    margin-inline: auto;
+}

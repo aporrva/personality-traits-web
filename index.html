@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoulMirror</title>
     <link rel="stylesheet" href="index.css">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCPS8DEGNT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DCPS8DEGNT');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -63,22 +72,23 @@
         <section class="box margin-inline w-[50%] shadow-2xl mt-8  rounded-2xl">
             <p id="story" class="story">You're at a party and..</p>
             <p id="Question" class="Question"></p>
-            <img id="image" class="rounded-xl margin-inline" src="https://wallpapercave.com/wp/wp3182298.jpg" alt="my image">
+            <img id="image" class="rounded-xl margin-inline" src="https://wallpapercave.com/wp/wp3182298.jpg"
+                alt="my image">
             <div id="options-container" class="boxx  flex-col ">
                 <div class="lisst">
                     <input class="radio-item" type="radio" id="option1" name="options" value="A">
                     <label class="list" for="option1">Option 1</label><br>
                 </div>
                 <div class="lisst">
-                    <input class="radio-item"type="radio" id="option2" name="options" value="B">
+                    <input class="radio-item" type="radio" id="option2" name="options" value="B">
                     <label class="list" for="option2">Option 2</label><br>
                 </div>
                 <div class="lisst">
-                    <input class="radio-item"type="radio" id="option3" name="options" value="C">
+                    <input class="radio-item" type="radio" id="option3" name="options" value="C">
                     <label class="list" for="option3">Option 3</label><br>
                 </div>
                 <div class="lisst">
-                    <input class="radio-item"type="radio" id="option4" name="options" value="D">
+                    <input class="radio-item" type="radio" id="option4" name="options" value="D">
                     <label class="list" for="option4">Option 4</label><br>
                 </div>
             </div>
@@ -86,28 +96,29 @@
 
         <section id="back-for" class="w-[50%] margin-inline flex justify-between mt-4" style="height: 48px;">
             <button id="Previous" class="text-purple-700 h-full text-sm pl-4 pr-4 "><--Previous </button>
-            <button id="Next" class="bg-purple-700 text-white rounded-xl pl-4 pr-4 h-full text-sm">Next--></button>
+                    <button id="Next"
+                        class="bg-purple-700 text-white rounded-xl pl-4 pr-4 h-full text-sm">Next--></button>
         </section>
-                    <section class="box w-[50%] mb-20  margin-inline  shadow-2xl flex-col rounded-2xl">
-                        <h2 class="pl-6  pt-6 font-semibold font-semibold">Current Trait Analysis</h2>
+        <section class="box w-[50%] mb-20  margin-inline  shadow-2xl flex-col rounded-2xl">
+            <h2 class="pl-6  pt-6 font-semibold font-semibold">Current Trait Analysis</h2>
 
-                        <div class="flex-col pt-8 pl-4 pr-4">
-                            <section class="flex gap-8 pb-8 text-gray-500 gap">
-                                <div class=" pl-2 text-base" >Extroverted</div>
-                                <div class="analysis-container bg-gray-300">
-                                    <div class="analysis bg-purple-700 "id="extrodiv"></div>
-                                </div>
-                                <div id="%1" class=" pr-2 text-base analyis-percentile">0%</div>
-                            </section>
-                            <section class="flex gap-8 pb-8 text-gray-500 gap">
-                                <div class=" pl-2 text-base" >Introverted</div>
-                                <div class="analysis-container bg-gray-300">
-                                    <div class="analysis bg-purple-700"id="introdiv"></div>
-                                </div>
-                                <div id="%2" class=" pr-2 text-base analyis-percentile">0%</div>
-                            </section>
-                        </div>
-                    </section>
+            <div class="flex-col pt-8 pl-4 pr-4">
+                <section class="flex gap-8 pb-8 text-gray-500 gap">
+                    <div class=" pl-2 text-base">Extroverted</div>
+                    <div class="analysis-container bg-gray-300">
+                        <div class="analysis bg-purple-700 " id="extrodiv"></div>
+                    </div>
+                    <div id="%1" class=" pr-2 text-base analyis-percentile">0%</div>
+                </section>
+                <section class="flex gap-8 pb-8 text-gray-500 gap">
+                    <div class=" pl-2 text-base">Introverted</div>
+                    <div class="analysis-container bg-gray-300">
+                        <div class="analysis bg-purple-700" id="introdiv"></div>
+                    </div>
+                    <div id="%2" class=" pr-2 text-base analyis-percentile">0%</div>
+                </section>
+            </div>
+        </section>
     </main>
     <footer class="w-full">
         <div class=" flex justify-between pb-20 bg-white foot">
